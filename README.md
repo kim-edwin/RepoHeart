@@ -1,16 +1,18 @@
 # HeartRepo
 
-팀 협업을 위한 Git 및 GitHub 프로세스입니다.
+우리 끝까지 화이팅해요!!
+
+Trello Link : https://trello.com/invite/b/ZHSIAb9W/ATTI0356b6f472de8f2951fef89042c406ef8B0BE663/teamheart
 
 ## 초기 설정
 
 1. **원격 저장소 생성:**
-   - GitHub에서 "HeartRepo"라는 이름의 원격 저장소 생성.
+
+   GitHub에서 "HeartRepo"라는 이름의 원격 저장소 생성. **(완료!)**
 
 2. **로컬에서 클론:**
-   ```bash
-   git clone <원격 저장소 URL>
-   cd HeartRepo
+
+   VsCode에서 리포지토리 링크 가져오기! **(팀원 전원 완료!!)**
 
 ## 개인 작업 수행 프로세스
 
@@ -19,7 +21,7 @@
    local/main 브랜치가 최신화 되었다.
 
 2. **local/개인 브랜치에서 origin/main 브랜치를 pulll 해온다. (pull from 이용)**
-   '''bash
+   ```bash
    local/개인 브랜치도 최신화 되었다. (local/main과 loca/개인이 같아짐)
 
 3. **local/개인 브랜치에서 작업을 수행한다.**
