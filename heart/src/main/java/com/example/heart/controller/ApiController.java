@@ -19,4 +19,9 @@ public class ApiController {
     public String hello2() {
         return "Hello Minan, 이번엔 CREATE Branch 적용 후 새롭게 적어봅니다!";
     }
+
+    @GetMapping("/hello4")
+    public String hello4() {
+        return "gyeong min";
+    }
 }
