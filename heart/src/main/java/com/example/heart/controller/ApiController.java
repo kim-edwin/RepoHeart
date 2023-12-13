@@ -13,4 +13,10 @@ public class ApiController {
     public String hello() {
         return "Hello World";
     }
+
+    //localhost:8080/api/ver1/hello2
+    @GetMapping("/hello2")
+    public String hello2() {
+        return "Hello Minan";
+    }
 }
