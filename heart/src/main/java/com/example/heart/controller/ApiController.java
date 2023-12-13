@@ -22,6 +22,6 @@ public class ApiController {
 
     @GetMapping("/hello4")
     public String hello4() {
-        return "gyeong min이가 아님";
+        return "gyeong min으로 branch 만들기";
     }
 }
