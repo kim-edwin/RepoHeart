@@ -24,4 +24,9 @@ public class ApiController {
     public String hello4() {
         return "gyeong min이가 아님";
     }
+
+    @GetMapping("/hello3")
+    public String hello3() {
+        return "Yoona에요!";
+    }
 }
