@@ -17,7 +17,7 @@ public class ApiController {
     //localhost:8080/api/ver1/hello2
     @GetMapping("/hello2")
     public String hello2() {
-        return "Hello Minan, 이번엔 CREATE Branch 적용 후 새롭게 적어봅니다!";
+        return "Hello Minan, 이번엔 CREATE Branch 적용 후 새롭게 적어봅니다!!!";
     }
 
     @GetMapping("/hello4")
