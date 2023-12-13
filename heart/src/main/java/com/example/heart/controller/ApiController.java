@@ -19,4 +19,9 @@ public class ApiController {
     public String hello2() {
         return "Hello Minan";
     }
+
+    @GetMapping("/hello4")
+    public String hello4() {
+        return "gyeong min";
+    }
 }
