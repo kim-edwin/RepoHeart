@@ -32,3 +32,7 @@ spring:
 
   mvc:
     static-path-pattern: /static/**
+
+file:
+  upload:
+    directory: C:/Users/T16/Desktop/playdata/project/RepoHeart/uploads
