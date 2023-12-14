@@ -1,5 +1,6 @@
 package com.example.heart.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -26,11 +27,11 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    private Long userId;
 
-    private String user_name;
+    private String userName;
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     //일대다 관계 명시. 한 유저가 여러개의 이력서를 가지고 있을 수 있음을 알려줌.
     //mappedBy : 매핑 기준
     //cascade : User엔티티의 변경사항이 연관된 Resume엔티티에도 적용됨. ex) 유저가 삭제되면 해당 유저에 매핑된 resume도 전부 삭제됨
