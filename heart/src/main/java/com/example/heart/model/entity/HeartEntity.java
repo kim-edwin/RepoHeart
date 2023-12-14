@@ -24,14 +24,14 @@ public class HeartEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long heart_id;
+    private Long heartId;
 
     @ManyToOne
     @JoinColumn(name = "resume_id")
     private ResumeEntity resumeEntity;
 
-    private int page_number;
-    private double x_coordinate;
-    private double y_coordinate;
+    private int pageNumber;
+    private double xCoordinate;
+    private double yCoordinate;
 
 }

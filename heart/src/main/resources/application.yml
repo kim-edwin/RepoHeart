@@ -1,33 +1,29 @@
 server:
   servlet:
     encoding:
-      # 한글깨짐 처리 
       force-response: true
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
-# Spring Data Source 설정 
 spring:
-
   output:
     ansi:
-      enabled: always 
+      enabled: always
 
-  # 데이터 베이스 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/examplesdb?userSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://127.0.0.1:3306/heartDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
     username: urstory
     password: u1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-  #  데이터 베이스 커넥션 
   jpa:
     hibernate:
-      ddl-auto: update 
+      ddl-auto: update
+    show-sql: true
     properties:
       hibernate:
-        show_sql: true 
-        format_sql: true 
+        dialect: org.hibernate.dialect.MySQLDialect
 
-  # mustache (1. 루트폴더 변경, 2. 타임리프 캐시 설정 변경)
   mustache:
     prefix: classpath:templates/
     check-template-location: true

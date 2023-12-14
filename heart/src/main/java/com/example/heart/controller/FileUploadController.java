@@ -1,0 +1,33 @@
+package com.example.heart.controller;
+
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.heart.service.MainService;
+
+@Controller
+@RequestMapping("/pdf")
+public class FileUploadController {
+
+    @Autowired
+    private MainService mainService;
+
+    @PostMapping("/upload")
+    @ResponseBody
+    public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
+        try {
+            mainService.uploadPdf(file);
+            return "File uploaded successfully!";
+        } catch (IOException e) {
+            return "Error uploading file: " + e.getMessage();
+        }
+    }
+}
