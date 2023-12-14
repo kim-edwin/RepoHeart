@@ -24,6 +24,7 @@ public class FileUploadController {
     @ResponseBody
     public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
         try {
+            // PDF를 업로드하고, 저장된 파일의 경로를 반환
             mainService.uploadPdf(file);
             return "File uploaded successfully!";
         } catch (IOException e) {
