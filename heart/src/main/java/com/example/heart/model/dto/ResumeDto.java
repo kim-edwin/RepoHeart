@@ -20,4 +20,6 @@ public class ResumeDto {
     private String resumeFilename;
     private Date uploadDate;
     private List<Long> userIds;
+    
+
 }
