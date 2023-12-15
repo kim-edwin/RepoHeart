@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Viewer</title>
+    <title>Viewer</title>
     <!-- ViewerJS 스크립트 로딩 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.0/viewer.min.js"></script>
+
     <!-- ViewerJS 스타일 로딩 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.0/viewer.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -14,31 +15,21 @@
     <!-- PDF를 표시할 영역 -->
     <header>
         <!-- 헤더 내용을 추가하세요. -->
-        <h1>Header Content</h1>
+        <h1>  Header Content  </h1>
     </header>
 
-
-
-    
-    <main>
-        <div id="pdf-viewer">
-            <!-- Mustache 문법을 사용하여 PDF 경로를 설정 -->
-            <object data="/download/{{resumeId}}" type="application/pdf" width="100%" height="100%">
-                <p>PDF를 열 수 없습니다.</p>
-            </object>
-        </div>
+    <main id="image-gallery">
+        <!-- Mustache syntax to iterate over image paths -->
+        {{#images}}
+            <img src="{{.}}" data-action="zoom">
+        {{/images}}
     </main>
     
-
-
     <footer>
         <!-- 푸터 내용을 추가하세요. -->
         <p>Footer Content</p>
     </footer>
+
     
-    <script>
-        // ViewerJS 초기화 (필요한 경우)
-        var viewer = new Viewer(document.getElementById('pdf-viewer'));
-    </script>
 </body>
 </html>
