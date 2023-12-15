@@ -3,6 +3,9 @@ package com.example.heart.controller;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -20,36 +23,41 @@ public class MainController {
     public String index() {
         return "index";
     }
-    
-    @GetMapping("/viewer/{resumeId}")
-    public String viewer(@PathVariable Long resumeId, Model model) {
-        // 이미지 파일의 경로 목록을 가져와 모델에 추가
-        List<String> imagePaths = getImagePathsForResume(resumeId);
-        model.addAttribute("images", imagePaths);
-    
-        return "viewer";
-    }
 
-    private List<String> getImagePathsForResume(Long resumeId) {
-        List<String> imagePaths = new ArrayList<>();
+    @GetMapping("/viewer/{resumeId}")
+public String viewer(@PathVariable Long resumeId, Model model) {
+    // 이미지 파일의 경로 목록을 가져와 모델에 추가
+    List<Map<String, Object>> imagePaths = getImagePathsForResume(resumeId);
+
+    model.addAttribute("images", imagePaths);
+
+    return "viewer";
+}
+
+    // 이미지 목록 가져오기 메서드
+    private List<Map<String, Object>> getImagePathsForResume(Long resumeId) {
+        List<Map<String, Object>> imagePaths = new ArrayList<>();
         String basePath = "/static/uploads/" + resumeId + "/";
-    
+
         // 해당 경로의 폴더를 가져옴
         File folder = new File(getClass().getResource(basePath).getFile());
-    
+
         // 폴더가 존재하고 디렉토리인 경우 파일 목록을 가져옴
         if (folder.exists() && folder.isDirectory()) {
             File[] files = folder.listFiles();
-    
+
             // 파일 개수를 페이지 수로 사용
             int pageCount = files.length;
-    
+
             // 파일명을 resumeId_pageindex로 추가
             for (int i = 0; i < pageCount; i++) {
-                imagePaths.add(basePath + resumeId + "_" + i + ".png");
+                Map<String, Object> imageInfo = new HashMap<>();
+                imageInfo.put("path", basePath + resumeId + "_" + i + ".png");
+                imageInfo.put("pageIndex", i + 1);
+                imagePaths.add(imageInfo);
             }
         }
-    
+
         return imagePaths;
-    }
+}
 }
