@@ -36,7 +36,7 @@ public class UserEntity {
     //mappedBy : 매핑 기준
     //cascade : User엔티티의 변경사항이 연관된 Resume엔티티에도 적용됨. ex) 유저가 삭제되면 해당 유저에 매핑된 resume도 전부 삭제됨
     //orphanRemoval : ??
-    private List<ResumeEntity> resumes; // 일대다라서 List형태로 받음. 
 
+    private List<ResumeEntity> resumes; // 일대다라서 List형태로 받음. 
 
 }
