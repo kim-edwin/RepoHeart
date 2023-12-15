@@ -1,24 +1,21 @@
 package com.example.heart.database.dao;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.rendering.ImageType;
-import org.apache.pdfbox.rendering.PDFRenderer;
-
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.rendering.ImageType;
+import org.apache.pdfbox.rendering.PDFRenderer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.heart.database.repository.HeartRepository;
 import com.example.heart.database.repository.ResumeRepository;
 import com.example.heart.database.repository.UserRepository;
 import com.example.heart.model.entity.ResumeEntity;
@@ -28,6 +25,7 @@ import com.example.heart.model.entity.UserEntity;
 public class MainDao {
 
     @Value("${file.upload.directory}")
+
     private String uploadDirectory;
 
     @Autowired
@@ -35,25 +33,6 @@ public class MainDao {
 
     @Autowired
     private ResumeRepository resumeRepository;
-
-    // pdf를 이미지로 변환하여 저장하는 메소드
-    private void convertPdfToImagesAndSave(MultipartFile pdfFile, Long resumeId) throws IOException {
-        try (PDDocument document = PDDocument.load(pdfFile.getInputStream())) {
-            PDFRenderer pdfRenderer = new PDFRenderer(document);
-
-            // 이미지를 저장할 폴더 생성
-            Path resumeFolder = Paths.get(uploadDirectory, String.valueOf(resumeId));
-            resumeFolder.toFile().mkdirs();
-
-            for (int pageIndex = 0; pageIndex < document.getNumberOfPages(); pageIndex++) {
-                BufferedImage image = pdfRenderer.renderImageWithDPI(pageIndex, 300, ImageType.RGB);
-
-                // 이미지를 저장
-                File outputImageFile = new File(resumeFolder.toFile(), resumeId + "_" + pageIndex + ".png");
-                ImageIO.write(image, "png", outputImageFile);
-            }
-        }
-    }
 
     // pdf업로드
     public void uploadPdf(MultipartFile pdfFile) throws IOException {
@@ -79,6 +58,27 @@ public class MainDao {
         convertPdfToImagesAndSave(pdfFile, resumeEntity.getResumeId());
     }
 
-    // 나머지 메소드들...
+    // pdf를 이미지로 변환하여 저장하는 메소드
+    private void convertPdfToImagesAndSave(MultipartFile pdfFile, Long resumeId) throws IOException {
+        try (PDDocument document = PDDocument.load(pdfFile.getInputStream())) {
+            PDFRenderer pdfRenderer = new PDFRenderer(document);
+
+            // 이미지를 저장할 폴더 생성
+            Path resumeFolder = Paths.get(uploadDirectory, String.valueOf(resumeId));
+            resumeFolder.toFile().mkdirs();
+
+            for (int pageIndex = 0; pageIndex < document.getNumberOfPages(); pageIndex++) {
+                BufferedImage image = pdfRenderer.renderImageWithDPI(pageIndex, 300, ImageType.RGB);
+
+                // 이미지를 저장
+                File outputImageFile = new File(resumeFolder.toFile(), resumeId + "_" + pageIndex + ".png");
+                ImageIO.write(image, "png", outputImageFile);
+            }
+        }
+    }
+
+    
+
+    
 
 }
