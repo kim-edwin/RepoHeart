@@ -1,6 +1,6 @@
 /* 드래그 가능한 스티커의 기본 스타일 */
 .draggable-sticker {
-  width: 50px; /* 스티커의 크기 설정 */
+  width: 10px; /* 스티커의 크기 설정 */
   cursor: grab; /* 드래그 가능한 커서 아이콘 */
 }
 
