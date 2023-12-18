@@ -30,7 +30,7 @@ public class UserEntity {
     private Long userId;
 
     private String userName;
-    
+    private String userPassword;
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     //일대다 관계 명시. 한 유저가 여러개의 이력서를 가지고 있을 수 있음을 알려줌.
     //mappedBy : 매핑 기준
@@ -38,5 +38,16 @@ public class UserEntity {
     //orphanRemoval : ??
 
     private List<ResumeEntity> resumes; // 일대다라서 List형태로 받음. 
+    private String role;
+    private String userEmail;
 
+    // getPassword() 메서드 추가
+    public String getPassword() {
+        return userPassword;
+    }
+
+    // setPassword() 메서드 추가
+    public void setPassword(String password) {
+        this.userPassword = password;
+    }
 }
