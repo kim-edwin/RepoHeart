@@ -1,6 +1,7 @@
 package com.example.heart.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,9 +12,9 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import java.io.IOException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,7 +25,7 @@ public class MainController {
     @Value("${file.upload.directory}") // application.yml에 설정한 파일 업로드 디렉토리
     private String fileUploadDirectory;
 
-    @GetMapping("/index")
+    @PostMapping("/index")
     public String index() {
         return "index";
     }
@@ -82,4 +83,6 @@ public class MainController {
 
         return imagePaths;
 }
+
+    
 }
