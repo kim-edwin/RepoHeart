@@ -73,6 +73,7 @@ public class MainDao {
                 // 이미지를 저장
                 File outputImageFile = new File(resumeFolder.toFile(), resumeId + "_" + pageIndex + ".png");
                 ImageIO.write(image, "png", outputImageFile);
+                
             }
         }
     }

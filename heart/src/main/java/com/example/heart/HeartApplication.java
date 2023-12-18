@@ -9,5 +9,4 @@ public class HeartApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HeartApplication.class, args);
 	}
-
 }

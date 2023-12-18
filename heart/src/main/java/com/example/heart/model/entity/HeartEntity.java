@@ -27,8 +27,11 @@ public class HeartEntity {
     private Long heartId;
 
     @ManyToOne
-    @JoinColumn(name = "resume_id")
+    @JoinColumn(name = "resume_id") 
     private ResumeEntity resumeEntity;
+    //HeartEntity는 ResumeEntity랑 (N:1) 관계
+    //JoinColumn 어노테이션-> 
+    //(Foreign Key) "resume_id"와 매핑
 
     private int pageNumber;
     private double xCoordinate;
