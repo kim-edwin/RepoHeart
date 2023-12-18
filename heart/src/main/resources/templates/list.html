@@ -13,7 +13,13 @@
             background-color: #333;
             padding: 10px;
             color: white;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
         }
 
         .search-container {
@@ -27,6 +33,15 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             width: 300px;
+        }
+
+        .logout-button {
+            padding: 6px 10px; /* 크기 조절 */
+            background-color: #ccc; /* 밝은 회색으로 변경 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .list-container {
@@ -46,8 +61,8 @@
         }
 
         .profile-picture {
-            width: 90px; /* 큰 프로필 사진으로 변경 */
-            height: 90px; /* 큰 프로필 사진으로 변경 */
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             margin-right: 15px;
         }
@@ -75,12 +90,14 @@
 </head>
 <body>
     <header>
-        <h1>List Page</h1>
-        <div class="search-container">
-            <input type="text" class="search-box" placeholder="검색어를 입력하세요">
-            <button class="search-button">검색</button>
-        </div>
+        <div class="logo">List Page</div>
+        <button class="logout-button">로그아웃</button>
     </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="검색어를 입력하세요">
+        <button class="search-button">검색</button>
+    </div>
 
     <div class="list-container">
         <!-- 예시 리스트 아이템 -->

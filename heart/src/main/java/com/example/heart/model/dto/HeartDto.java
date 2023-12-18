@@ -12,6 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class HeartDto {
+    
     private Long heartId;
     private Long resumeId; //heart가 위치한 resume의 id
     private int resumePageNumber;
