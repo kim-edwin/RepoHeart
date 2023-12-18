@@ -16,6 +16,8 @@ import lombok.ToString;
 public class UserDto {
     private Long userId;
     private String userName;
+    private String userPassword;
+    private String userEmail;
     private List<Long> resumeIds; //Entity를 사용하지 않고 resumeId들을 List 형태로 받음
 }
 
