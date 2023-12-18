@@ -3737,6 +3737,32 @@ textarea.form-control-lg {
   display: block;
 }
 
+/* .custom-bg-Beige {
+  background-color: rgba(238, 231, 218, 1); /* 소프트 올리브 그린으로 변경 */
+  /* 원하는 다른 스타일도 추가 가능 */
+/* } */ 
+
+/* navbar 색 수정 */
+.custom-bg-Beige {
+  background-color: rgb(221, 205, 191); 
+  /* 원하는 다른 스타일도 추가 가능 */
+}
+
+/* 로그인 버튼과 회원가입 버튼에 ml-auto 클래스 추가 */
+.btn-logout{
+  font-weight: bold; /* 텍스트 굵기를 bold로 설정 */
+  margin-right: 8px; /* 간격을 8px로 설정 */
+  border-width: 2px; /* 테두리 굵기를 2px로 설정 */
+  border-radius: 15px; /* 모서리를 15px로 설정 (값을 조절하여 둥글기 정도 조절 가능) */
+}
+
+/* 로그인 버튼과 회원가입 버튼에 스타일 적용 */
+.btn-logout {
+  margin-left: auto;
+  margin-right: 8px; /* 8px 간격 설정 */
+  color: rgba(0, 0, 0, 0.9);
+}
+
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
@@ -3747,8 +3773,8 @@ textarea.form-control-lg {
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
-  --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
+  --bs-navbar-brand-color: rgba(255, 255, 255, 0.9); /* heart brand text color 수정 */
+  --bs-navbar-brand-hover-color: rgb(117, 14, 33, 1); 
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -3785,6 +3811,9 @@ textarea.form-control-lg {
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
+  font-weight: bold; /* 텍스트 굵기를 bold로 설정 */
+  position: relative; /*포지션을 상대 포지션으로 설정*/
+  text-shadow: 0px 1px 4px #000;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);

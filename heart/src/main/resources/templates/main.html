@@ -6,34 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Heart</title>
+
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-store" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <title>Heart❤</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/main_favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
         type="text/css" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css" />
+
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../static/css/main_styles.css" rel="stylesheet" />
+
+    <!-- main -> 하트를 눌러주세요 문구 색 변경 -->
+    <style>
+      .masthead h1 {
+          color: rgb(218, 103, 212); /* 텍스트 색상을 검정색으로 지정 */
+          font-family: 'seolleimcool-SemiBold'; /* 글꼴을 'seolleimcool-SemiBold'로 지정 */
+      }
+    </style>
+
 </head>
 
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#!">Heart❤</a>
-            <div class="btn-group" role="group" aria-label="Basic example">
+    <!-- custom-bg-Beige: 내가 원하는 색으로 수정 -->
+    <nav class="navbar navbar-light custom-bg-Beige static-top">
+    <!-- <nav class="navbar navbar-light custom-bg-Beige static-top"> -->
+      <div class="container d-flex justify-content-between">
+        <!-- <div class="container"> -->
+            <a class="navbar-brand" href="http://127.0.0.1:5501/heart/src/main/resources/templates/main.html#!" data-text="Heart❤">Heart❤</a>
+            <!-- <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-outline-danger" style="width: 100px;" href="login">
                     <p><strong>로그인</strong></p>
                 </button>
                 <button type="button" class="btn btn-outline-warning" style="width: 100px;" href="signup">
                     <p><strong>회원가입</strong></p>
                 </button>
-            </div>
-            <!-- <a class="btn btn-outline-danger" href="#login">로그인</a>
-                <a class="btn btn-outline-warning" href="#signup">회원가입</a> -->
+            </div> -->
+          <div class="btn-group" role="group" aria-label="Basic example"></div>
+            <a class="btn btn-outline-danger btn-login mr-2" href="#login">로그인</a>
+            <a class="btn btn-outline-warning btn-signup" href="#signup">회원가입</a>
         </div>
     </nav>
 
@@ -80,20 +97,18 @@
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
                         <div class="container px-5 my-5">
-                            <form "id=" contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form "id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 <div class="row">
-
-                                    <div class="col">
+                                    <!-- <div class="col"> -->
+                                      <div class="col custom-height">
                                         <div class="mb-3">
-                                            <!-- <label class="form-label" for="newField1">하트를 눌러주세요~💕</label> -->
                                             <input class="form-control" id="newField1" type="text"
                                                 placeholder="관심있는 분야를 검색해주세요" data-sb-validations="required" />
-                                            <div class="invalid-feedback" data-sb-feedback="newField1:required">New
-                                                Field 1 is required.</div>
+                                            <div class="invalid-feedback" data-sb-feedback="newField1:required">검색어를 입력해주세요.</div>
                                         </div>
                                     </div>
+
                                     <div class="col-auto">
-                                        <!-- <div class="d-grid"> -->
                                             <button class="btn btn-primary btn-lg disabled" id="submitButton"
                                             type="submit">검색</button>
                                         </div>
@@ -101,14 +116,14 @@
                                     
                                     <div class="d-none" id="submitSuccessMessage">
                                         <div class="text-center mb-3">
-                                            <div class="fw-bolder">검색 성공!</div>
-                                            <p>To activate this form, sign up at</p>
-                                            <a
-                                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                            <!-- <div class="fw-bolder">검색 성공!</div> -->
+                                            <!-- <p>To activate this form, sign up at</p> -->
+                                            <!-- <a -->
+                                                <!-- href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> -->
                                         </div>
                                     </div>
                                     <div class="d-none" id="submitErrorMessage">
-                                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                                        <!-- <div class="text-center text-danger mb-3">Error sending message!</div> -->
                                     </div>
                             </form>
                         </div>
@@ -291,7 +306,7 @@
                         <li class="list-inline-item">⋅</li>
                         <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
                     </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Team_Heart</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Team_Heart❣</p>
                 </div>
                 <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                     <ul class="list-inline mb-0">
