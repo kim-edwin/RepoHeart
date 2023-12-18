@@ -6,6 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Resume - Start Bootstrap Theme</title>
+
     <link rel="icon" type="image/x-icon" href="../static/assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,10 +20,15 @@
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-    <!-- <div class="container d-flex justify-content-between align-items-center"></div> -->
         <a class="navbar-brand" href="#!">Heart❤</a>
-            <a class="btn btn-outline-danger" href="logout">로그아웃</a>
-
+        <!-- 토글 버튼 -->
+        <label class="toggle-control">
+            <input type="checkbox" id="toggle-heart">
+            <span class="control"></span>
+        </label>
+        <a class="btn btn-outline-danger" href="logout">로그아웃</a>
+    </div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Clarence Taylor</span>
@@ -38,17 +44,16 @@
         </ul>
     </div>
 </nav>
-
 <!-- Page Content-->
 <div class="container-fluid p-0">
     <section class="resume-section" id="about">
         <div class="resume-section-content">
             <h1 class="mb-0">
-                Clarence
-                <span class="text-primary">Taylor</span>
+                Title
+                <span class="text-primary"> of Cover letter</span>
             </h1>
             <div class="subheading mb-5">
-                3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
+                3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468  ·
                 <a href="mailto:name@email.com">name@email.com</a>
             </div>
             <div class="social-icons">
@@ -59,8 +64,9 @@
             </div>
         </div>
     </section>
-
     {{#images}}
+
+
     <section class="resume-section" id="page{{pageIndex}}">
         <div class="resume-section-content">
             <h2 class="mb-5">Page {{pageIndex}}</h2>
@@ -69,11 +75,22 @@
             </div>
         </div>
     </section>
+
+<!-- 기존 코드의 나머지 부분은 동일 -->
+    <div style="display: flex; align-items: center;">
+        <img src="../static/assets/img/heart1 (2).png" class="draggable-sticker" draggable="true" alt="Draggable Heart Sticker" />
+        <strong style="margin-left: 10px;">Leave your heart</strong>
+    </div>
     {{/images}}
+
+
+
+
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../static/js/scripts.js"></script>
+    <script src="../static/js/viewer.js"></script>
 </body>
 </html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>List Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .search-box {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .logout-button {
+            padding: 6px 10px; /* 크기 조절 */
+            background-color: #ccc; /* 밝은 회색으로 변경 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .list-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .profile-picture {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .list-title {
+            font-size: 18px;
+        }
+
+        .list-content {
+            font-size: 14px;
+        }
+
+        .view-button {
+            padding: 5px 10px;
+            background-color: #d474a2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background-color: #d474a2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">List Page</div>
+        <button class="logout-button">로그아웃</button>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="검색어를 입력하세요">
+        <button class="search-button">검색</button>
+    </div>
+
+    <div class="list-container">
+        <!-- 예시 리스트 아이템 -->
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_peng.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 1</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
+        </div>
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_man.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 2</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
+        </div>
+        <!-- 추가 리스트 아이템 -->
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_woman.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 3</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/26'">자세히 보기</button>
+        </div>
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_child.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 4</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/27'">자세히 보기</button>
+        </div>
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_oldman.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 5</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/28'">자세히 보기</button>
+        </div>
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_girl.jpg" alt="프로필 이미지">
+            <div>
+                <div class="list-title">리스트 내용 6</div>
+                <div class="list-content">작은 내용 설명...</div>
+            </div>
+            <button class="view-button" onclick="location.href='/viewer/29'">자세히 보기</button>
+        </div>
+        <!-- ... -->
+    </div>
+</body>
+</html>

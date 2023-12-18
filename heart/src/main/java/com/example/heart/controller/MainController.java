@@ -39,6 +39,14 @@ public class MainController {
         return "viewer";
     }
 
+    @GetMapping("/list")
+    public String list(Model model) {
+        // You can add attributes to the model if needed
+        // model.addAttribute("attributeName", attributeValue);
+
+        return "list"; // This should match the name of your list.html template
+    }
+
     // 이미지 목록 가져오기 메서드
     private List<Map<String, Object>> getImagePathsForResume(Long resumeId) {
         List<Map<String, Object>> imagePaths = new ArrayList<>();

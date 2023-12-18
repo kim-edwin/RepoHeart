@@ -34,3 +34,20 @@ main {
     height: 100%;
     overflow: auto;
 }
+
+/* 토글 버튼 스타일 */
+.toggle-control {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    /* 다른 스타일 속성 */
+}
+
+/* 하트 스티커 스타일 */
+.heart {
+    width: 20px;
+    height: 20px;
+    background-image: url('C:/Users/Playdata/Download/download.png');
+    position: absolute;
+    /* 다른 스타일 속성 */
+}

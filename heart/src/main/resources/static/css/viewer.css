@@ -1,0 +1,14 @@
+/* 드래그 가능한 스티커의 기본 스타일 */
+.draggable-sticker {
+  width: 10px; /* 스티커의 크기 설정 */
+  cursor: grab; /* 드래그 가능한 커서 아이콘 */
+}
+
+
+/* 드롭 영역 표시를 위한 스타일 */
+.drop-area-highlight {
+  outline: 2px dashed #f00; /* 드롭 영역에 대시선 테두리 추가 */
+  outline-offset: -10px;
+}
+
+

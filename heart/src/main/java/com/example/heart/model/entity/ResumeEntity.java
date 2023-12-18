@@ -42,7 +42,9 @@ public class ResumeEntity {
 
     // 엔티티가 저장되기 전에 실행되는 메서드
     @PrePersist
+
     protected void onCreate() {
+        
         this.uploadDate = new Date(); // 현재 날짜와 시간으로 업로드 일자 설정
     }
 }
