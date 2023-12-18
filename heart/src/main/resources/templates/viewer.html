@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -15,82 +16,73 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../static/css/styles.css" rel="stylesheet" />
+    <link href="../static/css/viewer.css" rel="stylesheet" />
+
 </head>
+
 <body id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-        <a class="navbar-brand" href="#!">Heart❤</a>
-        <!-- 토글 버튼 -->
-        <label class="toggle-control">
-            <input type="checkbox" id="toggle-heart">
-            <span class="control"></span>
-        </label>
-        <a class="btn btn-outline-danger" href="logout">로그아웃</a>
-    </div>
-</nav>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Clarence Taylor</span>
-        <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../static/assets/img/profile.jpg" alt="..." /></span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Heart❤</a>
+            <a class="btn btn-outline-danger" href="logout">로그아웃</a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Clarence Taylor</span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="../static/assets/img/profile.jpg" alt="..." /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+                {{#images}}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page{{pageIndex}}">Page {{pageIndex}}</a>
+                </li>
+                {{/images}}
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <!-- Page Content-->
+<div class="container-fluid px-0">
+    <div class="row mx-0">
+        <div class="col-lg-10 mx-auto">
+            <!-- 이미지 섹션 시작 -->
             {{#images}}
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page{{pageIndex}}">Page {{pageIndex}}</a></li>
+            <section class="resume-section" id="page{{pageIndex}}">
+                <div class="resume-section-content w-100">
+                    <h2 class="mb-5">Page {{pageIndex}}</h2>
+                    <div class = "w-100">
+                        <img src="{{path}}" data-action="zoom" alt="Image">
+                    </div>
+                </div>
+            </section>
             {{/images}}
-        </ul>
-    </div>
-</nav>
-<!-- Page Content-->
-<div class="container-fluid p-0">
-    <section class="resume-section" id="about">
-        <div class="resume-section-content">
-            <h1 class="mb-0">
-                Title
-                <span class="text-primary"> of Cover letter</span>
-            </h1>
-            <div class="subheading mb-5">
-                3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468  ·
-                <a href="mailto:name@email.com">name@email.com</a>
-            </div>
-            <div class="social-icons">
-                <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
-            </div>
+            <!-- 이미지 섹션 끝 -->
         </div>
-    </section>
-    {{#images}}
-
-
-    <section class="resume-section" id="page{{pageIndex}}">
-        <div class="resume-section-content">
-            <h2 class="mb-5">Page {{pageIndex}}</h2>
-            <div>
-                <img src="{{path}}" data-action="zoom" alt="Image">
+        <div class="col-lg-1">
+            <!-- 버튼 섹션 시작 -->
+            <div class="fixed-buttons-container position-fixed top-50 end-0 translate-middle-y pr-3 text-white"
+                style="margin-right : 20px;">
+                <p class="mb-0" style="margin-right: 10px;" >Please Leave your heart</p>
+                <button class="btn btn-danger" id="resetButton">Reset</button>
+                <button class="btn btn-success" id="saveButton">Save</button>
             </div>
+            <!-- 버튼 섹션 끝 -->
         </div>
-    </section>
-
-<!-- 기존 코드의 나머지 부분은 동일 -->
-    <div style="display: flex; align-items: center;">
-        <img src="../static/assets/img/heart1 (2).png" class="draggable-sticker" draggable="true" alt="Draggable Heart Sticker" />
-        <strong style="margin-left: 10px;">Leave your heart</strong>
     </div>
-    {{/images}}
-
-
-
-
-
+    <div class="heart-cursor"></div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="../static/js/scripts.js"></script>
     <script src="../static/js/viewer.js"></script>
+</div>
+        
 </body>
+
 </html>
