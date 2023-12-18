@@ -35,6 +35,6 @@ spring:
 
 file:
   upload:
-    directory: C:\dev\git\project3\RepoHeart\heart\build\resources\main\static\uploads
+    directory: C:\dev\mini\RepoHeart_1217_List제작중_하트도이뻐짐\heart\build\resources\main\static\uploads
 
     

@@ -78,9 +78,6 @@ public class MainController {
             // IOException 처리 로직 추가
             e.printStackTrace();
         }
-
-        
-
         return imagePaths;
 }
 
