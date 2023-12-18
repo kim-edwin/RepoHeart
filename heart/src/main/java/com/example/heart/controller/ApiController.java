@@ -27,6 +27,6 @@ public class ApiController {
 
     @GetMapping("/hello3")
     public String hello3() {
-        return "Yoona에요! yoonabranch";
+        return "Yoona에요!";
     }
 }
