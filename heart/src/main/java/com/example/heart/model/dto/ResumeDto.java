@@ -19,7 +19,7 @@ public class ResumeDto {
     private Long resumeId;
     private String resumeFilename;
     private Date uploadDate;
-    private List<Long> userIds;
+    private Long userId;
     
 
 }

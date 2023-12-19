@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.heart.database.repository.HeartRepository;
 import com.example.heart.database.repository.ResumeRepository;
@@ -13,6 +14,8 @@ import com.example.heart.model.entity.HeartEntity;
 import com.example.heart.model.entity.ResumeEntity;
 import com.example.heart.model.java.HeartMapper;
 
+
+@Service
 public class HeartService {
     
     @Autowired
