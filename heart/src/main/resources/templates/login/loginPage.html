@@ -13,22 +13,24 @@
             <form action="/join" method="post">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
-                <input type="text" name="userName" placeholder="Name" />
-                <input type="email" name="userEmail" placeholder="Email" />
-                <input type="password" name="userPassword" placeholder="Password" />
+                <input type="text" name="name" placeholder="Name" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="pwd" placeholder="Password" />
                 <!-- Add any other fields you want to include -->
                 <button type="submit">Sign Up</button>
             </form>
         </div>
+
         <div class="form-container sign-in-container">
-            <form action="/index" method="post">
+            <form action="/login" method="post">
                 <h1>Log in</h1>
                 <span>or use your account</span>
-                <input type="email" name="userEmail" placeholder="Email" />
-                <input type="password" name="userPassword" placeholder="Password" />
+                <input type="text" name="username" placeholder="Name" />
+                <input type="password" name="password" placeholder="Password" />
                 <button type="submit">Log In</button>
             </form>
         </div>
+        
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
