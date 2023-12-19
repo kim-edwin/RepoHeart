@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>List Page</title>
     <style>
         body {
-            margin: 0;
+            margin: 20px 300px 300px 300px; /* 여백 추가 및 위쪽 여백 조절 */
             font-family: Arial, sans-serif;
         }
+
+
+
 
         header {
             background-color: #333;
@@ -32,12 +36,29 @@
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            width: 300px;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 8px 16px;
+            background-color: white;
+            color: #d186aa;
+            border: 1px solid #d186aa;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #d186aa;
+            color: white;
         }
 
         .logout-button {
-            padding: 6px 10px; /* 크기 조절 */
-            background-color: #ccc; /* 밝은 회색으로 변경 */
+            padding: 6px 10px;
+            background-color: #ccc;
             color: white;
             border: none;
             border-radius: 5px;
@@ -57,7 +78,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100px;
+            height: 130px;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .list-box::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2%;
+            background-color: #ef2929;
+            opacity: 0.7;
         }
 
         .profile-picture {
@@ -77,17 +111,18 @@
 
         .view-button {
             padding: 5px 10px;
-            background-color: #d474a2;
+            background-color: #d186aa;
             color: white;
             border: none;
             cursor: pointer;
         }
 
         .view-button:hover {
-            background-color: #d474a2;
+            background-color: #a35171;
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">List Page</div>
@@ -96,61 +131,41 @@
 
     <div class="search-container">
         <input type="text" class="search-box" placeholder="검색어를 입력하세요">
-        <button class="search-button">검색</button>
+        <button class="search-button" onclick="searchFunction()">검색</button>
     </div>
 
     <div class="list-container">
-        <!-- 예시 리스트 아이템 -->
+        <!-- Mustache 반복문으로 동적으로 리스트 아이템 생성 -->
+        {{#resumeList}}
         <div class="list-box">
             <img class="profile-picture" src="../static/assets/img/profile_peng.jpg" alt="프로필 이미지">
             <div>
-                <div class="list-title">리스트 내용 1</div>
-                <div class="list-content">작은 내용 설명...</div>
+                <div class="list-title">{{resumeId}}</div>
+                <div class="list-title">{{resumeFilename}}</div>
+                <div class="list-content">{{uploadDate}}</div>
             </div>
-            <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
+
+
+            <button class="view-button" onclick="location.href='/viewer/{{resumeId}}'">자세히 보기</button>
         </div>
-        <div class="list-box">
-            <img class="profile-picture" src="../static/assets/img/profile_man.jpg" alt="프로필 이미지">
-            <div>
-                <div class="list-title">리스트 내용 2</div>
-                <div class="list-content">작은 내용 설명...</div>
-            </div>
-            <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
-        </div>
-        <!-- 추가 리스트 아이템 -->
-        <div class="list-box">
-            <img class="profile-picture" src="../static/assets/img/profile_woman.jpg" alt="프로필 이미지">
-            <div>
-                <div class="list-title">리스트 내용 3</div>
-                <div class="list-content">작은 내용 설명...</div>
-            </div>
-            <button class="view-button" onclick="location.href='/viewer/26'">자세히 보기</button>
-        </div>
-        <div class="list-box">
-            <img class="profile-picture" src="../static/assets/img/profile_child.jpg" alt="프로필 이미지">
-            <div>
-                <div class="list-title">리스트 내용 4</div>
-                <div class="list-content">작은 내용 설명...</div>
-            </div>
-            <button class="view-button" onclick="location.href='/viewer/27'">자세히 보기</button>
-        </div>
-        <div class="list-box">
-            <img class="profile-picture" src="../static/assets/img/profile_oldman.jpg" alt="프로필 이미지">
-            <div>
-                <div class="list-title">리스트 내용 5</div>
-                <div class="list-content">작은 내용 설명...</div>
-            </div>
-            <button class="view-button" onclick="location.href='/viewer/28'">자세히 보기</button>
-        </div>
-        <div class="list-box">
-            <img class="profile-picture" src="../static/assets/img/profile_girl.jpg" alt="프로필 이미지">
-            <div>
-                <div class="list-title">리스트 내용 6</div>
-                <div class="list-content">작은 내용 설명...</div>
-            </div>
-            <button class="view-button" onclick="location.href='/viewer/29'">자세히 보기</button>
-        </div>
-        <!-- ... -->
+        {{/resumeList}}
+
+
+        
+        <!-- 검색 결과가 없을 때의 처리 -->
+        {{^resumeList}}
+        <p>검색 결과가 없습니다.</p>
+        {{/resumeList}}
     </div>
+
+    <script>
+        function searchFunction() {
+            var searchInput = document.querySelector('.search-box');
+            var searchTerm = searchInput.value.trim().toLowerCase();
+            console.log('검색어:', searchTerm);
+            // 검색어를 서버에 전송하고, 서버에서는 해당 검색어에 맞는 리스트를 반환하여 동적으로 업데이트
+        }
+    </script>
 </body>
+
 </html>
