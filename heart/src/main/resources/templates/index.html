@@ -15,10 +15,35 @@
 
     <h2>PDF 업로드</h2>
     
-    <form action="/pdf/upload" method="post" enctype="multipart/form-data">
+    <form id="upload-form" action="/pdf/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept=".pdf">
-        <button type="submit">PDF 업로드</button>
-
+        <button type="button" onclick="uploadAndClosePopup()">PDF 업로드</button>
     </form>
+    
+    <script>
+        function uploadAndClosePopup() {
+            var formData = new FormData(document.getElementById('upload-form'));
+    
+            // AJAX를 사용하여 파일 업로드 처리
+            fetch('/pdf/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'upload_finish') {
+                    alert("파일 업로드에 성공하였습니다!");
+                    window.opener.location.reload(); // 메인 페이지 새로 고침
+                    window.close(); // 팝업 닫기
+                } else {
+                    // 업로드 실패 시 추가적인 처리 가능
+                    alert("File upload failed: " + data);
+                }
+            })
+            .catch(error => {
+                alert("Error during file upload: " + error.message);
+            });
+        }
+    </script>
 </body>
 </html>

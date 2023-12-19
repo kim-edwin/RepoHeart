@@ -190,16 +190,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const url = window.location.href;
         const resumeId = url.substring(url.lastIndexOf('/') + 1);
     
-        const heartDto = {
-            resumeId: parseInt(resumeId),
-        };
+        let heartLocationsToSend = [];
+
+        if (heartLocations.length === 0) {
+            // 배열이 비어있는 경우 무의미한 하트 배열 추가
+            heartLocationsToSend.push({
+                heartId: null,
+                resumeId: parseInt(resumeId),
+                pageNumber: null,
+                xcoordinate: null,
+                ycoordinate: null,
+            });
+        } else {
+            // 배열이 비어있지 않은 경우 현재 배열 사용
+            heartLocationsToSend = heartLocations;
+        }
+
+        
     
         fetch('/updateHearts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(heartLocations),
+            body: JSON.stringify(heartLocationsToSend),
         })
         .then(response => response.json())
         .then(data => {

@@ -1,6 +1,7 @@
 package com.example.heart.controller;
 
 import java.util.List;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -83,6 +84,7 @@ public class UserController {
 
         // 이력서 정보를 서비스를 통해 가져와 모델에 추가
         List<ResumeDto> resumes = resumeService.getAllResumes();
+        Collections.reverse(resumes); // 역순으로 정렬
         model.addAttribute("resumes", resumes);
         return "staff/list";
     }

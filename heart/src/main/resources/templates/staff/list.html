@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>List Page</title>
-    <link href="/heart/src/main/resources/static/css/list.css" rel="stylesheet" />
 
     <style>
         /* Global Styles */
@@ -63,10 +62,30 @@ header {
     font-weight: bold;
     width: 80px;
     transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
     line-height: 10px;
+
 }
 
 .search-button:hover {
+    background-color: #d186aa;
+    color: white;
+}
+
+.upload-button {
+    padding: 14px;
+    background-color: white;
+    color: #d186aa;
+    border: 1px solid #d186aa;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 80px;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 10px;
+}
+
+.upload-button:hover {
     background-color: #d186aa;
     color: white;
 }
@@ -178,6 +197,7 @@ header {
     <div class="search-container">
         <input type="text" class="search-box" placeholder="검색어를 입력하세요">
         <button class="search-button" onclick="searchFunction()">검색</button>
+        <button class="upload-button" id="upload-button" onclick="openUploadPopup()">업로드</button>
     </div>
 
     <div class="list-container">
@@ -199,6 +219,11 @@ header {
             var searchTerm = searchInput.value.trim().toLowerCase();
             console.log('검색어:', searchTerm);
         }
+
+        function openUploadPopup() {
+            var uploadPopup = window.open('/index', 'UploadPopup', 'width=600,height=400');
+        }
+
 
         // 이미지가 로드되기 전에 에러 방지를 위한 이벤트 핸들러
         document.querySelectorAll('.profile-picture').forEach(function (img) {
