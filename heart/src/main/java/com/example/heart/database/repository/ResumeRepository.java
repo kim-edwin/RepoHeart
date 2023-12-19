@@ -10,4 +10,6 @@ import com.example.heart.model.entity.ResumeEntity;
 @Repository
 public interface ResumeRepository extends JpaRepository<ResumeEntity, Long> {
     Optional<ResumeEntity> findById(Long resumeId);
+
+    
 }
