@@ -37,4 +37,14 @@ public class HeartEntity {
     private double xCoordinate;
     private double yCoordinate;
 
+    @Override
+    public String toString() {
+        return "HeartEntity{" +
+                "heartId=" + heartId +
+                ", pageNumber=" + pageNumber +
+                ", xCoordinate=" + xCoordinate +
+                ", yCoordinate=" + yCoordinate +
+                '}';
+}
+
 }

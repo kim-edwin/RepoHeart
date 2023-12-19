@@ -1,11 +1,11 @@
 package com.example.heart.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,40 +28,42 @@ public class HeartController {
         log.info("[HeartController] HeartService is {}", (heartService != null) ? "available" : "not available");
     }
 
-    @PostMapping("/saveHeartLocations")
-    public ResponseEntity<String> saveHeartLocations(@RequestBody Map<String, Object> requestData) {
+    @PostMapping("/updateHearts")
+    public ResponseEntity<String> updateHearts(@RequestBody List<HeartDto> heartDtoList) {
         try {
-            log.info("[HeartController][saveHeartLocations] Start");
+            log.info("[HeartController][updateHearts] Start");
 
-            List<Map<String, Object>> heartDtoList = (List<Map<String, Object>>) requestData.get("heartDtoList");
-            log.info("[HeartController][saveHeartLocations] HeartDtoList :" + heartDtoList);
+            // HeartDtoList에서 resumeID 추출
+            if (!heartDtoList.isEmpty()) {
+                Long resumeId = heartDtoList.get(0).getResumeId();
 
-            // HeartDto 리스트를 순회하면서 처리
-            for (Map<String, Object> heartDtoMap : heartDtoList) {
-                HeartDto heartDto = new HeartDto();
-                Long resumeId = Long.parseLong((String) heartDtoMap.get("resumeId"));
-                int pageNumber = (int) heartDtoMap.get("pageNumber");
-                double xCoordinate = ((Number) heartDtoMap.get("x")).doubleValue();
-                double yCoordinate = ((Number) heartDtoMap.get("y")).doubleValue();
-    
-                heartDto.setResumeId(resumeId);
-                heartDto.setResumePageNumber(pageNumber);
-                heartDto.setXCoordinate(xCoordinate);
-                heartDto.setYCoordinate(yCoordinate);
+                // 서비스를 통해 삭제
+                heartService.deleteHeartsByResumeId(resumeId);
+                log.info("[HeartController][updateHearts] Deleted all hearts for resumeId: " + resumeId);
 
-                log.info("[HeartController][saveHeartLocations] Dto 생성 완료 " + heartDto);
-    
-                heartService.saveHeartLocations(heartDto, resumeId);
-                log.info("[HeartController][saveHeartLocations] Service로 넘기기 완료");
+                // HeartDtoList를 반복문으로 돌면서 서비스의 updateHearts 실행
+                for (HeartDto heartDto : heartDtoList) {
+                    heartService.updateHearts(heartDto, resumeId);
+                }
+
+                // 성공적으로 처리되면 OK 응답 반환
+                return ResponseEntity.ok("Hearts updated successfully");
+            } else {
+                // HeartDtoList가 비어있으면 Bad Request 응답 반환
+                return ResponseEntity.badRequest().body("HeartDtoList is empty");
             }
 
-            return ResponseEntity.ok("Heart locations saved successfully.");
         } catch (Exception e) {
-            // 예외 처리
-            log.info("[HeartController][saveHeartLocations] 오류 발생" + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error saving heart locations: " + e.getMessage());
+            // 오류 발생 시 Bad Request 응답 반환
+            log.error("[HeartController][updateHearts] Error: " + e.getMessage(), e);
+            return ResponseEntity.badRequest().body("Error updating hearts: " + e.getMessage());
         }
+    }
+
+
+    @GetMapping("/getHeartsByResumeId/{resumeId}")
+    public List<HeartDto> getHeartsByResumeId(@PathVariable Long resumeId) {
+        return heartService.getHeartsByResumeId(resumeId);
     }
 
 }

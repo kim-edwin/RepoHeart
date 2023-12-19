@@ -10,7 +10,7 @@ public class HeartMapper {
         HeartEntity heartEntity = new HeartEntity();
         heartEntity.setHeartId(heartDto.getHeartId());
         heartEntity.setResumeEntity(resumeEntity);
-        heartEntity.setPageNumber(heartDto.getResumePageNumber());
+        heartEntity.setPageNumber(heartDto.getPageNumber());
         heartEntity.setXCoordinate(heartDto.getXCoordinate());
         heartEntity.setYCoordinate(heartDto.getYCoordinate());
         return heartEntity;
@@ -20,7 +20,7 @@ public class HeartMapper {
         HeartDto heartDto = new HeartDto();
         heartDto.setHeartId(heartEntity.getHeartId());
         heartDto.setResumeId(heartEntity.getResumeEntity().getResumeId());
-        heartDto.setResumePageNumber(heartEntity.getPageNumber());
+        heartDto.setPageNumber(heartEntity.getPageNumber());
         heartDto.setXCoordinate(heartEntity.getXCoordinate());
         heartDto.setYCoordinate(heartEntity.getYCoordinate());
         return heartDto;

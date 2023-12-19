@@ -15,7 +15,7 @@ public class HeartDto {
     
     private Long heartId;
     private Long resumeId; //heart가 위치한 resume의 id
-    private int resumePageNumber;
+    private int pageNumber;
     private double xCoordinate;
     private double yCoordinate;
 

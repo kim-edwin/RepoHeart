@@ -37,8 +37,8 @@ file:
   upload:
     directory: C:\dev\git\project3\RepoHeart\heart\build\resources\main\static\uploads
 
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: debug  
+# logging:
+#   level:
+#     org:
+#       hibernate:
+#         SQL: debug  

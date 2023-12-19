@@ -1,6 +1,7 @@
 package com.example.heart.service;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import com.example.heart.database.repository.HeartRepository;
 import com.example.heart.database.repository.ResumeRepository;
 import com.example.heart.model.dto.HeartDto;
 import com.example.heart.model.entity.HeartEntity;
-import com.example.heart.model.entity.ResumeEntity;
 import com.example.heart.model.java.HeartMapper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -26,26 +26,43 @@ public class HeartService {
     @Autowired
     private ResumeRepository resumeRepository;
 
-    public void saveHeartLocations(HeartDto heartDto, Long resumeId) {
-        log.info("[HeartService][saveHeartLocations]");
+    public void deleteHeartsByResumeId(Long resumeId) {
+        try {
+            log.info("[HeartService][deleteHeartsByResumeId] Start");
 
-        // ResumeEntity 조회
-        Optional<ResumeEntity> optionalResumeEntity = resumeRepository.findById(resumeId);
+            // 데이터베이스에서 해당 resumeID를 가지고 있는 모든 row 삭제
+            heartRepository.deleteByResumeEntity_ResumeId(resumeId);
 
-        // ResumeEntity가 존재하면 HeartDto를 HeartEntity로 변환하여 저장
-        if (optionalResumeEntity.isPresent()) {
-            ResumeEntity resumeEntity = optionalResumeEntity.get();
+            log.info("[HeartService][deleteHeartsByResumeId] Deleted all hearts for resumeId: " + resumeId);
 
-            // HeartDto를 HeartEntity로 변환
-            HeartEntity heartEntity = HeartMapper.toEntity(heartDto, resumeEntity);
-
-            // HeartEntity 저장
-            heartRepository.save(heartEntity);
-            log.info("[HeartService][saveHeartLocations] HeartEntity saved successfully.");
-        } else {
-            log.error("[HeartService][saveHeartLocations] ResumeEntity not found for resumeId: {}", resumeId);
-            // ResumeEntity가 존재하지 않는 경우에 대한 처리
-            // 예외 처리 또는 원하는 방식으로 처리
+        } catch (Exception e) {
+            // 오류 발생 시 예외 처리
+            log.error("[HeartService][deleteHeartsByResumeId] Error: " + e.getMessage(), e);
+            throw new RuntimeException("Error deleting hearts: " + e.getMessage());
         }
     }
+
+    public void updateHearts(HeartDto heartDto, Long resumeId) {
+        log.info("[HeartService][updateHearts] 실행 시작");
+    
+        HeartEntity newHeart = new HeartEntity();
+        newHeart.setResumeEntity(resumeRepository.findById(resumeId).orElse(null));
+        newHeart.setPageNumber(heartDto.getPageNumber());
+        newHeart.setXCoordinate(heartDto.getXCoordinate());
+        newHeart.setYCoordinate(heartDto.getYCoordinate());
+        heartRepository.save(newHeart);
+        
+
+        log.info("[HeartService][updateHearts] Hearts updated successfully.");
+    }
+    
+
+    public List<HeartDto> getHeartsByResumeId(Long resumeId) {
+        log.info("[HeartService][getHeartsByResumeId]");
+        
+        List<HeartEntity> heartEntities = heartRepository.findByResumeEntity_ResumeId(resumeId);
+        return heartEntities.stream().map(HeartMapper::toDto).collect(Collectors.toList());
+    }
 }
+
+
