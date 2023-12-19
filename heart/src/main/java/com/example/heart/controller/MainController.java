@@ -25,10 +25,10 @@ public class MainController {
     @Value("${file.upload.directory}") // application.yml에 설정한 파일 업로드 디렉토리
     private String fileUploadDirectory;
 
-    @PostMapping("/index")
-    public String index() {
-        return "index";
-    }
+    // @GetMapping("/index")
+    // public String index() {
+    //     return "index";
+    // }
 
     @GetMapping("/viewer/{resumeId}")
     public String viewer(@PathVariable Long resumeId, Model model) {
@@ -40,10 +40,8 @@ public class MainController {
         return "viewer";
     }
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     public String list(Model model) {
-        // You can add attributes to the model if needed
-        // model.addAttribute("attributeName", attributeValue);
 
         return "list"; // This should match the name of your list.html template
     }
@@ -58,7 +56,7 @@ public class MainController {
         Resource resource = new ClassPathResource(basePath);
         try {
             File folder = resource.getFile();
-            log.info("[MainController][getImagePathsForResume]" + folder);
+            log.info("[MainController][getImagePathsForResume] folder : " + folder);
             // 폴더가 존재하고 디렉토리인 경우 파일 목록을 가져옴
             if (folder.exists() && folder.isDirectory()) {
                 File[] files = folder.listFiles();

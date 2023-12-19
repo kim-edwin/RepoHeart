@@ -35,7 +35,7 @@ spring:
 
 file:
   upload:
-    directory: C:\dev\git\project3\RepoHeart\heart\build\resources\main\static\uploads
+    directory: C:\Users\T16\Downloads\RepoHeart_미난_현우수정용\RepoHeart\heart\build\resources\main\static\uploads
 
 # logging:
 #   level:
