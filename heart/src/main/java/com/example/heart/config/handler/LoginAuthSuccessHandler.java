@@ -37,7 +37,7 @@ public class LoginAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandl
         // 로그인 성공시, 로그인 유무 저장 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         userService.updateIsLoginByName(userDetails.getUsername(), true);
-        response.sendRedirect("/user/list");
+        response.sendRedirect("/user/main"); //main으로 가도록 수정함!
         super.onAuthenticationSuccess(request, response, authentication);
     }
 

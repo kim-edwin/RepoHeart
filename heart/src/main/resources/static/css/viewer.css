@@ -2,6 +2,13 @@
 /* 드래그 가능한 스티커의 기본 스타일 */
 /* Additional styling for the draggable heart image */
 
+/* 브랜드 name& 하트 reset & save버튼 글씨 */
+.fixed-buttons-container,
+.navbar-brand,
+.navbar-collapse, .navbar-nav,.nav-item, .nav-link,
+.mb-5 {
+font-family: 'Montserrat', sans-serif;}
+
 .heart-cursor {
   position: fixed;
   width: 30px;

@@ -1,5 +1,7 @@
 package com.example.heart.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,7 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.heart.model.dto.ResumeDto;
 import com.example.heart.model.dto.UserDto;
+import com.example.heart.model.entity.ResumeEntity;
+import com.example.heart.service.ResumeService;
 import com.example.heart.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +28,9 @@ public class UserController {
     
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ResumeService resumeService;
 
     /*
      * 누구나 접근 가능
@@ -59,11 +67,23 @@ public class UserController {
     /*
      * 로그인한 경우만 
      */
+    @GetMapping("/user/main")
+    public String usermain(Authentication authentication, Model model) {
+
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("username", userDetails.getUsername());
+        return "main";
+    }
+    
     @GetMapping("/user/list")
     public String user(Authentication authentication, Model model) {
 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         model.addAttribute("username", userDetails.getUsername());
+
+        // 이력서 정보를 서비스를 통해 가져와 모델에 추가
+        List<ResumeDto> resumes = resumeService.getAllResumes();
+        model.addAttribute("resumes", resumes);
         return "staff/list";
     }
 

@@ -6,34 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Resume - Start Bootstrap Theme</title>
+    <title>Heart❤</title>
 
     <link rel="icon" type="image/x-icon" href="../static/assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <!-- <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script> -->
+    
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../static/css/styles.css" rel="stylesheet" />
     <link href="../static/css/viewer.css" rel="stylesheet" />
 
+    <!-- 글씨체 -->
+    <style>
+      /* .navbar-brand { */
+          /* color: rgb(255, 255, 255);  */
+          /* font-family: 'Pretendard-Regular'; */
+      /* } */
+      /* 브랜드 name& 하트 reset & save버튼 글씨 */
+      .fixed-buttons-container,
+      .navbar-brand,
+      .navbar-collapse, .navbar-nav,.nav-item, .nav-link,
+      .mb-5{
+      font-family: 'Montserrat', sans-serif;}
+    </style>
+    
+    <!-- 구글 웹폰트 적용(heart reset & save버튼 글씨체) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#!">Heart❤</a>
-            <a class="btn btn-outline-danger" href="logout">로그아웃</a>
+            <!-- <a class="navbar-brand" href="#!">Heart❤</a> -->
+            <a class="btn btn-outline-danger btn-logout" href="logout">Log out</a>
         </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <nav class="navbar navbar-light custom-bg-Beige  static-top">
+      <a class="navbar-brand" href="http://127.0.0.1:5500/RepoHeart/heart/src/main/resources/templates/main.html">Heart❤</a>
+    </nav>
+      <!-- <a class="btn btn-outline-danger" href="logout">로그아웃</a> -->
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Clarence Taylor</span>
-            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                    src="../static/assets/img/profile.jpg" alt="..." /></span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" 
+                    src="../static/assets/img/루피.jpg" alt="..."/></span>
         </a>
+        <!-- 반응형 메뉴아이콘 -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
@@ -46,7 +67,6 @@
             </ul>
         </div>
     </nav>
-    <!-- Page Content-->
     <!-- Page Content-->
 <div class="container-fluid px-0">
     <div class="row mx-0">
