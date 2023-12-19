@@ -56,7 +56,7 @@ public class MainController {
         Resource resource = new ClassPathResource(basePath);
         try {
             File folder = resource.getFile();
-            log.info("[MainController][getImagePathsForResume]" + folder);
+            log.info("[MainController][getImagePathsForResume] folder : " + folder);
             // 폴더가 존재하고 디렉토리인 경우 파일 목록을 가져옴
             if (folder.exists() && folder.isDirectory()) {
                 File[] files = folder.listFiles();

@@ -40,10 +40,10 @@ public class MainDao {
         String username = "test001";
 
         // 1. userRepository에 pdf를 올린 유저의 정보가 업로드되어야 함.
-        UserEntity userEntity = userRepository.findByUserName(username)
+        UserEntity userEntity = userRepository.findByName(username)
                 .orElseGet(() -> {
                     UserEntity newUser = new UserEntity();
-                    newUser.setUserName(null);
+                    newUser.setName(username);;
                     return newUser;
                 });
 

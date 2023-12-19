@@ -10,7 +10,7 @@ import com.example.heart.model.entity.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    Optional<UserEntity> findByUserName(String userName);
+    Optional<UserEntity> findByName(String name);
 
     //@Query(value = "select * from user where name = :name", nativeQuery = true)
     //UserDto getUserDtoByName(@Param(value = "name") String name);

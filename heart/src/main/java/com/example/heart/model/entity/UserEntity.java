@@ -31,11 +31,11 @@ public class UserEntity {
     private Long userId;
 
     @Column
-    private String userName;
-    private String userPassword;
+    private String name;
+    private String pwd;
     private String role;
     // userEmail을 로그인 아이디로 사용하겠습니다!!
-    private String userEmail;
+    private String email;
     private Boolean isLogin; 
 
 
