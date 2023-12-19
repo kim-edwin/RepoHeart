@@ -44,6 +44,17 @@
             cursor: pointer;
         }
 
+        .upload-button {
+            padding: 6px 10px;
+            background-color: #4CAF50; /* 녹색으로 변경 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-right: auto;
+        }
+
         .list-container {
             display: flex;
             flex-direction: column;
@@ -99,6 +110,10 @@
         <button class="search-button">검색</button>
     </div>
 
+    <!-- Upload PDF 버튼 추가 -->
+    <button class="upload-pdf-button" onclick="location.href='/index'">Upload PDF</button>
+
+
     <div class="list-container">
         <!-- 예시 리스트 아이템 -->
         <div class="list-box">
@@ -109,16 +124,16 @@
             </div>
             <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
         </div>
-        <div class="list-box">
+        <!-- <div class="list-box">
             <img class="profile-picture" src="../static/assets/img/profile_man.jpg" alt="프로필 이미지">
             <div>
                 <div class="list-title">리스트 내용 2</div>
                 <div class="list-content">작은 내용 설명...</div>
             </div>
             <button class="view-button" onclick="location.href='/viewer/25'">자세히 보기</button>
-        </div>
+        </div> -->
         <!-- 추가 리스트 아이템 -->
-        <div class="list-box">
+        <!-- <div class="list-box">
             <img class="profile-picture" src="../static/assets/img/profile_woman.jpg" alt="프로필 이미지">
             <div>
                 <div class="list-title">리스트 내용 3</div>
@@ -149,8 +164,10 @@
                 <div class="list-content">작은 내용 설명...</div>
             </div>
             <button class="view-button" onclick="location.href='/viewer/29'">자세히 보기</button>
-        </div>
+        </div> -->
         <!-- ... -->
     </div>
+
+
 </body>
 </html>

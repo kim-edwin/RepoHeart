@@ -43,7 +43,7 @@ public class MainDao {
         UserEntity userEntity = userRepository.findByUserName(username)
                 .orElseGet(() -> {
                     UserEntity newUser = new UserEntity();
-                    newUser.setUserName(username);
+                    newUser.setUserName(null);
                     return newUser;
                 });
 
