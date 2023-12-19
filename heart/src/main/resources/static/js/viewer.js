@@ -206,8 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heartLocationsToSend = heartLocations;
         }
 
-        
-    
         fetch('/updateHearts', {
             method: 'POST',
             headers: {
@@ -218,11 +216,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             // 성공적으로 처리된 경우, 필요한 동작 수행
-            console.log(data);
+            console.log('저장되었습니다');
+            alert('하트가 저장되었습니다!');  // 알림 메시지 띄우기
             // 배열 비우기
             heartLocations = [];
-            // 페이지를 새로고침하거나 다른 동작 수행
-            //window.location.reload(); // 페이지를 새로고침하는 예시
+            // 페이지를 새로고침
+            window.location.reload(); 
         })
         .catch(error => {
             // 오류가 발생한 경우, 오류 메시지를 표시하거나 적절한 처리 수행

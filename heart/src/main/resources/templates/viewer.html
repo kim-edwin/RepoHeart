@@ -46,8 +46,15 @@
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <nav class="navbar navbar-light custom-bg-Beige  static-top">
-      <a class="navbar-brand" href="http://127.0.0.1:5500/RepoHeart/heart/src/main/resources/templates/main.html">Heart❤</a>
+        <div id="backtolist" class="navbar-brand">Heart❤</div>
     </nav>
+    <script>
+        // backtolist 태그를 클릭했을 때의 동작을 정의하는 JavaScript 코드
+        document.getElementById('backtolist').addEventListener('click', function() {
+            // 해당 URL로 이동
+            window.location.href = '/user/list';
+        });
+    </script>
       <!-- <a class="btn btn-outline-danger" href="logout">로그아웃</a> -->
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Clarence Taylor</span>
