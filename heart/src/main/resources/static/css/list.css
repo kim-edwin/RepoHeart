@@ -24,7 +24,7 @@ header {
 }
 
 .logo:hover {
-    color: #750e21
+    color: #be3455
 }
 
 .search-container {
@@ -35,7 +35,7 @@ header {
 
 .search-box {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #bfcad6;
     border-radius: 5px;
     width: 500px;
     margin-right: 10px;
@@ -72,7 +72,7 @@ header {
     outline: 1px solid #dc3545; /* outline 추가 및 색상 설정 */
     border: 1px solid #dc3545; /* outline 추가 */
     cursor: pointer;
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-right: 8px; /* 8px 간격 설정 */
     color: #dc3545;
 }

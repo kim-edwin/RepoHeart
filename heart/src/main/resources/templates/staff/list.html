@@ -10,12 +10,18 @@
 @charset "UTF-8";
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
-
+.logout-button,
+.search-box,
+.search-button,
+.upload-button,
+.upload-button:hover{
+    font-family: 'Montserrat', sans-serif;
+}
 /* Header Styles */
 header {
-    background-color: rgb(221, 205, 191);
+    background-color: rgb(237,206,196);
     padding: 10px;
     color: white;
     display: flex;
@@ -25,7 +31,7 @@ header {
 
 .logo {
     font-size: 24px;
-    margin-right: 600px;
+    /* margin-right: 600px; */
     font-weight: bold;
     position: relative;
     text-shadow: 0px 1px 4px #000;
@@ -33,7 +39,7 @@ header {
 }
 
 .logo:hover {
-    color: #750e21;
+    color: #be3455;
 }
 
 /* Search Styles */
@@ -45,9 +51,9 @@ header {
 
 .search-box {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #000000;
     border-radius: 5px;
-    width: 500px;
+    width: 800px;
     margin-right: 10px;
     height: 30px;
 }
@@ -55,8 +61,8 @@ header {
 .search-button {
     padding: 14px;
     background-color: white;
-    color: #d186aa;
-    border: 1px solid #d186aa;
+    color: #FF7062;
+    border: 1px solid #FF7062;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -68,25 +74,25 @@ header {
 }
 
 .search-button:hover {
-    background-color: #d186aa;
+    background-color: #FF7062;
     color: white;
 }
 
 .upload-button {
     padding: 14px;
     background-color: white;
-    color: #d186aa;
-    border: 1px solid #d186aa;
+    color: #BE3455;
+    border: 1px solid #BE3455;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    width: 80px;
+    width: 100px;
     transition: background-color 0.3s, color 0.3s;
     line-height: 10px;
 }
 
 .upload-button:hover {
-    background-color: #d186aa;
+    background-color: #BE3455;
     color: white;
 }
 
@@ -102,7 +108,7 @@ header {
     outline: 1px solid #dc3545;
     border: 1px solid #dc3545;
     cursor: pointer;
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-right: 8px;
     color: #dc3545;
 }
@@ -135,8 +141,8 @@ header {
 }
 
 .profile-picture {
-    width: 50px; /* 프로필 사진 크기 조정 */
-    height: 50px;
+    width: 80px; /* 프로필 사진 크기 조정 */
+    height: 80px;
     border-radius: 50%; /* 프로필 사진을 동그랗게 만들기 */
     margin-right: 15px; /* 프로필 사진과 텍스트 간격 조정 */
 }
@@ -144,7 +150,7 @@ header {
 /* Page Title Styles */
 .page-title {
     text-align: center;
-    margin-left: 8px;
+    /* margin-left: 8px; */
     font-size: 24px;
 }
 
@@ -168,7 +174,7 @@ header {
 .view-button {
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #d6b2cd;
+    background-color: #dd4851;
     color: white;
     border: none;
     cursor: pointer;
@@ -176,7 +182,47 @@ header {
 }
 
 .view-button:hover {
-    background-color: #d6b2cd;
+    background-color: #dd4851;
+}
+
+/* All Button Styles */
+.All-button {
+    padding: 14px;
+    margin-left: 10px;
+    background-color: white;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 80px;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 10px;
+    font-size: 18px; /* 버튼 text 크기 설정 */
+}
+
+.All-button:hover {
+    background-color: #000;
+    color: white;
+}
+
+
+
+/* 검색어 text 값 */
+.search-box{
+    font-size: 18px;
+}
+
+/* Search Button Styles */
+.search-button {
+    /* 기존 스타일 유지 */
+    font-size: 18px; /* 새로운 텍스트 크기 */
+}
+
+/* Upload Button Styles */
+.upload-button {
+    /* 기존 스타일 유지 */
+    font-size: 18px; /* 새로운 텍스트 크기 */
 }
 
     </style>
@@ -185,45 +231,76 @@ header {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <script>
+        // 로고 클릭 시 이동하는 함수
+        function redirectToMain() {
+            window.location.href = 'http://localhost:8080/user/main';
+        }
+    </script>
 </head>
 
 <body>
     <header>
-        <div class="logo">Heart❤</div>
+        <!-- 로고 클릭 시 redirectToMain 함수 호출 -->
+        <div class="logo" onclick="redirectToMain()">Heart❤</div>
         <h1 class="page-title">List Page</h1>
-        <button class="logout-button">Log out</button>
+        <form id="logoutForm" action="/logout" method="get">
+            <button type="submit" class="logout-button">Log out</button>
+        </form>
     </header>
 
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="검색어를 입력하세요">
+        <input type="text" class="search-box" placeholder="검색어를 입력하세요" id="searchInput">
         <button class="search-button" onclick="searchFunction()">검색</button>
         <button class="upload-button" id="upload-button" onclick="openUploadPopup()">업로드</button>
+        <button class="All-button" id="all-button" onclick="showAllItems()">All</button>
     </div>
 
     <div class="list-container">
         <!-- 리스트 아이템들... -->
         {{#resumes}}
-            <div class="list-box">
-                <img class="profile-picture" src="../static/assets/img/profile_peng.jpg" alt="프로필 이미지">
-                <div class="list-title">{{resumeFilename}}</div>
-                <div class="upload-date">{{uploadDate}}</div>
-                <div class="user-id">{{userId}}</div>
-                <button class="view-button" onclick="location.href='/viewer/{{resumeId}}'">자세히 보기</button>
-            </div>
+        <div class="list-box">
+            <img class="profile-picture" src="../static/assets/img/profile_peng.jpg" alt="프로필 이미지">
+            <div class="list-title">{{resumeFilename}}</div>
+            <div class="upload-date">{{uploadDate}}</div>
+            <div class="user-id">{{userId}}</div>
+            <button class="view-button" onclick="location.href='/viewer/{{resumeId}}'">자세히 보기</button>
+        </div>
         {{/resumes}}
     </div>
 
     <script>
         function searchFunction() {
-            var searchInput = document.querySelector('.search-box');
+            var searchInput = document.getElementById('searchInput');
             var searchTerm = searchInput.value.trim().toLowerCase();
-            console.log('검색어:', searchTerm);
+
+            // 모든 리스트 아이템을 가져옵니다.
+            var listItems = document.querySelectorAll('.list-box');
+
+            // 각 아이템을 순회하면서 검색어에 맞지 않는 아이템은 숨깁니다.
+            listItems.forEach(function (item) {
+                var title = item.querySelector('.list-title').innerText.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    item.style.display = 'flex'; // 보이기
+                } else {
+                    item.style.display = 'none'; // 숨기기
+                }
+            });
+        }
+
+            // all 기능 추가
+                function showAllItems() {
+            // 모든 리스트 아이템을 보이도록 설정합니다.
+            var listItems = document.querySelectorAll('.list-box');
+            listItems.forEach(function (item) {
+                item.style.display = 'flex'; // 보이기
+            });
         }
 
         function openUploadPopup() {
             var uploadPopup = window.open('/index', 'UploadPopup', 'width=600,height=400');
         }
-
 
         // 이미지가 로드되기 전에 에러 방지를 위한 이벤트 핸들러
         document.querySelectorAll('.profile-picture').forEach(function (img) {

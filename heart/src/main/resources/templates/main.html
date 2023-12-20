@@ -23,7 +23,7 @@
         <!-- main -> 하트를 눌러주세요 문구 색 변경 -->
         <style>
             .masthead h1 {
-                color: rgb(218, 103, 212); /* 텍스트 색상을 검정색으로 지정 */
+                color: rgb(218, 103, 212); /* 텍스트 색상 지정 */
                 font-family: 'seolleimcool-SemiBold'; /* 글꼴을 'seolleimcool-SemiBold'로 지정 */
             }
 
@@ -32,13 +32,13 @@
                 /* font-family: 'Noto Sans', sans-serif; */
                 }
 
-                .btn-signup,
-                .btn-login,
-                .btn{
-                    font-family: 'Montserrat', sans-serif;
-                    /* font-family: 'Noto Sans', sans-serif; */
-                    /* font-family: 'Noto Sans KR', sans-serif; */
-                }
+            .btn-signup,
+            .btn-login,
+            .btn{
+                font-family: 'Montserrat', sans-serif;
+                /* font-family: 'Noto Sans', sans-serif; */
+                /* font-family: 'Noto Sans KR', sans-serif; */
+              }
           </style>
         <!-- 구글 웹폰트 적용(Heart brand text) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,7 @@
     <!-- custom-bg-Beige: 내가 원하는 색으로 수정 -->
     <nav class="navbar navbar-light custom-bg-Beige static-top">
       <div class="container d-flex justify-content-between">
-        <a class="navbar-brand" href="http://127.0.0.1:5501/heart/src/main/resources/templates/main.html#!">Heart❤</a>
+        <a class="navbar-brand" href="http://localhost:8080/user/main">Heart❤</a>
             <!-- <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-outline-danger" style="width: 100px;" href="login">
                     <p><strong>로그인</strong></p>
@@ -60,9 +60,10 @@
                     <p><strong>회원가입</strong></p>
                 </button>
             </div> -->
-            <div class="btn-group" role="group" aria-label="Basic example"></div>
+            <!-- 로그인 회원가입 버튼  -->
+            <!-- <div class="btn-group" role="group" aria-label="Basic example"></div>
             <a class="btn btn-outline-danger btn-login mr-2" href="#login">Login</a>
-            <a class="btn btn-outline-warning btn-signup" href="#signup">Signup</a>
+            <a class="btn btn-outline-warning btn-signup" href="#signup">Signup</a> -->
         </div>
     </nav>
 
@@ -91,10 +92,10 @@
               </div> -->
         <div class="container position-relative">
             <div class="row justify-content-center">
-                <div class="col-xl-6">
+                <div class="col-xl-8">
                     <div class="text-center text-white">
                         <!-- Page heading-->
-                        <h1 class="mb-5">하트를 눌러주세요~💕</h1>
+                        <h1 class="mb-5">Click Your Heart💕</h1>
                         <!-- <div class="search-form">
                               <input class="form-control form-control-lg" id="text" type="text" placeholder="관심있는 분야를 검색해주세요" data-sb-validations="required,text" />
                               <div class="invalid-feedback text-white" data-sb-feedback="SearchResult:required">Search is required.</div>
@@ -112,8 +113,8 @@
                             <form id=" contactForm" data-sb-form-api-token="af3148a1-bcb4-4f8e-8d17-c17cb7aa10df">
                                 <div class="row">
                                   <div class="col custom-height">
-                                        <div class="mb-3">
-                                            <input class="form-control" id="newField1" type="text"
+                                        <div class="mb-auto">
+                                            <input class="form-control" id="newField1" type="text" style="width: 650px;"
                                                 placeholder="관심있는 분야를 검색해주세요" data-sb-validations="required" />
                                             <div class="invalid-feedback" data-sb-feedback="newField1:required">검색어를 입력해주세요.</div>
                                         </div>
@@ -276,8 +277,8 @@
     <!-- to get an API token!-->
     <!-- <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN"> -->
     <!-- Email address input-->
-    <div class="row">
-        <div class="col">
+    <!-- <div class="row">
+        <div class="col"> -->
             <!-- <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" /> -->
             <!-- <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div> -->
             <!-- <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div> -->
@@ -300,46 +301,46 @@
             <!---->
             <!-- This is what your users will see when there is-->
             <!-- an error submitting the form-->
-            <div class="d-none" id="submitErrorMessage">
-                <div class="text-center text-danger mb-3">Error sending message!</div>
+            <!-- <div class="d-none" id="submitErrorMessage"> -->
+                <!-- <div class="text-center text-danger mb-3">Error sending message!</div> -->
             </div>
             </form>
         </div>
     </div>
     </div>
-    <!-- </section> -->
+    </section>
     <!-- Footer-->
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#!">About</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Contact</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                        <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; Team_Heart❣</p>
-                </div>
-                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item me-4">
-                            <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                        </li>
-                        <li class="list-inline-item me-4">
-                            <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer bg-light" style="height: 290px;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                  <ul class="list-inline mb-2">
+                      <li class="list-inline-item"><a href="#!">About</a></li>
+                      <li class="list-inline-item">⋅</li>
+                      <li class="list-inline-item"><a href="#!">Contact</a></li>
+                      <li class="list-inline-item">⋅</li>
+                      <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                      <li class="list-inline-item">⋅</li>
+                      <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                  </ul>
+                  <p class="text-muted small mb-4 mb-lg-0">© Team_Heart❣</p>
+              </div>
+              <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                  <ul class="list-inline mb-0">
+                      <li class="list-inline-item me-4">
+                          <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                      </li>
+                      <li class="list-inline-item me-4">
+                          <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -350,5 +351,4 @@
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
-
 </html>

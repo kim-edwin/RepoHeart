@@ -3750,7 +3750,7 @@ textarea.form-control-lg {
 }
 /* navbar 색 수정 */
 .custom-bg-Beige {
-  background-color: rgb(221, 205, 191); 
+  background-color: rgb(237,206,196); 
   /* 원하는 다른 스타일도 추가 가능 */
 }
 /* 로그인 버튼과 회원가입 버튼에 ml-auto 클래스 추가 */
@@ -3782,9 +3782,9 @@ textarea.form-control-lg {
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(255, 255, 255, 0.9);
-  --bs-navbar-brand-hover-color: rgb(117, 14, 33, 1); 
+  --bs-navbar-brand-font-size: 24px;
+  --bs-navbar-brand-color: #ffffffe6;
+  --bs-navbar-brand-hover-color: rgb(190,52,85); 
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -10909,7 +10909,7 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  /* background: url("../assets/img/bg-masthead.jpg") no-repeat center center; */
+  background: url("../assets/img/main1.png") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -10918,6 +10918,7 @@ header.masthead:before {
   content: "";
   position: absolute;
   background-color: #ffff;
+  background: url("../assets/img/main1.png") no-repeat center center;
   height: 100%;
   width: 100%;
   top: 0;
