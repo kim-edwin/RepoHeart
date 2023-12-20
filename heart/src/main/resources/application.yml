@@ -35,15 +35,10 @@ spring:
 
 file:
   upload:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    directory: C:\Users\T16\Desktop\playdata\project\RepoHeart\heart\build\resources\main\static\uploads
-=======
+
     directory: C:\dev\mini\RepoHeart_1217_List제작중_하트도이뻐짐\heart\build\resources\main\static\uploads
->>>>>>> 3df007e2e0a809fc60c42d5fc55da5070a01b8dc
-=======
-    directory: C:\dev\mini\RepoHeart_1217_List제작중_하트도이뻐짐\heart\build\resources\main\static\uploads
->>>>>>> 3df007e2e0a809fc60c42d5fc55da5070a01b8dc
+
+
 
   mime-type-mapping:
     css: text/css
