@@ -35,7 +35,7 @@ spring:
 
 file:
   upload:
-    directory: C:\Users\T16\Desktop\playdata\project\RepoHeart\heart\build\resources\main\static\uploads
+    directory: C:\dev\git\project3\RepoHeart\heart\build\resources\main\static\uploads
 
   mime-type-mapping:
     css: text/css
