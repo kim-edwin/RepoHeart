@@ -58,6 +58,11 @@ public class MainDao {
         convertPdfToImagesAndSave(pdfFile, resumeEntity.getResumeId());
     }
 
+
+
+
+    
+
     // pdf를 이미지로 변환하여 저장하는 메소드
     private void convertPdfToImagesAndSave(MultipartFile pdfFile, Long resumeId) throws IOException {
         try (PDDocument document = PDDocument.load(pdfFile.getInputStream())) {

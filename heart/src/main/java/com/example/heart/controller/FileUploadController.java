@@ -22,7 +22,7 @@ public class FileUploadController {
 
     @PostMapping("/upload")
     @ResponseBody
-    public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) { //postmapping
         try {
             // PDF를 업로드하고, 저장된 파일의 경로를 반환
             mainService.uploadPdf(file);
