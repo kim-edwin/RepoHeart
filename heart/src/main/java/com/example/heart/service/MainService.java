@@ -21,6 +21,7 @@ public class MainService {
         if (!pdfFile.getOriginalFilename().toLowerCase().endsWith(".pdf")) { //파일의 원본이름을 읽어서 .pdf로 안끝나면 에러 메시지를 발생시킴
             throw new InvalidFileException("올바른 PDF 파일이 아닙니다.");
         }
+
         mainDao.uploadPdf(pdfFile);
     }
 }

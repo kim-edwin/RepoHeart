@@ -9,10 +9,9 @@ import com.example.heart.model.entity.HeartEntity;
 
 @Repository
 public interface HeartRepository extends JpaRepository<HeartEntity, Long> {
-                                                                    //HeartEntity 기본키타입이 Long
+    
     List<HeartEntity> findByResumeEntity_ResumeId(Long resumeId);
-
+    
     void deleteByResumeEntity_ResumeId(Long resumeId);
-
 }
 

@@ -29,28 +29,8 @@ font-family: 'Montserrat', sans-serif;}
 }
 
 .draggable-sticker {
-<<<<<<< HEAD
-<<<<<<< HEAD
   width: 50px; /* 스티커의 크기 설정 */
   cursor: grab; /* 드래그 가능한 커서 아이콘 */
-=======
-=======
->>>>>>> 3df007e2e0a809fc60c42d5fc55da5070a01b8dc
-  width: 50px; /* Set the desired width */
-  height: auto; /* Maintain aspect ratio */
-  cursor: grab; /* Set the cursor type for dragging */
-  z-index: 100; /* Ensure the sticker is above other elements */
-  /* Add any other custom styles you want */
-}
-
-/* Optional: Add styles for a highlighted drop area */
-.drop-area-highlight {
-  outline: 2px dashed #f00;
-  outline-offset: -10px;
-<<<<<<< HEAD
->>>>>>> 3df007e2e0a809fc60c42d5fc55da5070a01b8dc
-=======
->>>>>>> 3df007e2e0a809fc60c42d5fc55da5070a01b8dc
 }
 
 

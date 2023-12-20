@@ -46,15 +46,12 @@ public class MainController {
         return "list"; // This should match the name of your list.html template
     }
 
-
     // 이미지 목록 가져오기 메서드
     private List<Map<String, Object>> getImagePathsForResume(Long resumeId) {
         List<Map<String, Object>> imagePaths = new ArrayList<>();
         String basePath = "/static/uploads/" + resumeId + "/";
         log.info("[MainController][getImagePathsForResume] basePath : "+basePath);
 
-
-        
         // 해당 경로의 폴더를 가져옴
         Resource resource = new ClassPathResource(basePath);
         try {
@@ -79,6 +76,9 @@ public class MainController {
             // IOException 처리 로직 추가
             e.printStackTrace();
         }
+
+        
+
         return imagePaths;
 }
 

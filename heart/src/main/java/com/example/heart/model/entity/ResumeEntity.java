@@ -26,7 +26,6 @@ import lombok.ToString;
 @ToString
 @Table(name = "resume")
 @Entity(name = "ResumeEntity")
-//jpa entity /데이터베이스의 resume테이블과매핑//userEntity와 다대일관계
 public class ResumeEntity {
     
     @Id

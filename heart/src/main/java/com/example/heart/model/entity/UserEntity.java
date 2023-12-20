@@ -24,7 +24,6 @@ import lombok.ToString;
 @ToString
 @Table(name = "user")
 @Entity(name = "UserEntity")
-//JPA Entity
 public class UserEntity {
 
     @Id
