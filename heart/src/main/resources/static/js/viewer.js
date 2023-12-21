@@ -119,6 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
         heartStickers.forEach(function(heartSticker) {
             heartSticker.parentNode.removeChild(heartSticker);
         });
+
+        // 배열 초기화
+        heartLocations = [];
+
+        // 배열 정보 확인
+        console.log("하트 배열 초기화 완료", heartLocations);
     });
 
     // Save 버튼 클릭 이벤트 핸들러
