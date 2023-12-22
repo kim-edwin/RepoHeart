@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Reset 버튼 클릭 이벤트 핸들러
+    // Reset 버튼 클릭 이벤트 핸들러
     document.getElementById('resetButton').addEventListener('click', function() {
         // 모든 하트 스티커 제거
         var heartStickers = document.querySelectorAll('.draggable-sticker');
